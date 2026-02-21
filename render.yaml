@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: bot-whatsapp
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn main:app
+    envVars:
+      - key: WHATSAPP_TOKEN
+        value: SEU_TOKEN_AQUI
+      - key: PHONE_NUMBER_ID
+        value: SEU_PHONE_ID_AQUI
+      - key: VERIFY_TOKEN
+        value: meu_bot_secreto_123
+      - key: GEMINI_APIKEY
+        value: SUA_GEMINI_KEY_AQUI
+```
+
+---
+
+### Passo 4 — Criar o servico no Render
+
+1. Acesse **render.com** e crie conta gratis
+2. Clique em **"New Web Service"**
+3. Conecte seu GitHub e selecione o repositorio `bot-whatsapp`
+4. Configure as variaveis de ambiente com suas chaves
+5. Clique em **"Deploy"**
+
+---
+
+### Passo 5 — Apos o deploy
+
+O Render vai gerar uma URL assim:
+```
+https://bot-whatsapp.onrender.com
+```
+
+Cole no painel da Meta:
+```
+https://bot-whatsapp.onrender.com/webhook

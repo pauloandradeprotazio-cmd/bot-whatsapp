@@ -6,11 +6,11 @@ services:
     startCommand: gunicorn main:app
     envVars:
       - key: WHATSAPP_TOKEN
-        value: SEU_TOKEN_AQUI
+        value: EAAapx5KgzoMBSmZCp0RlVhaelHFhFz0ZA2QcUZAvlRwmcUyVRNHPRQEuqvWTZCcXwaB7nGDx2w6FKxkPVPQjUyPdOIZCKEnE3326RCvSDYmCkgbBomErdGNqlIafszD8WnTkq1OQ2pklSVd6D56NLxjXwTadazZBMg8uJ692ZCsZCHnQAINxB69QpBWGbKMSQcNyL15z8lFsEQO4UP0fUoVOVlZBbhCqQmdBwtGxJLNBdLxaYNIN9Y8XqyhIjmsDVZAxlG8RQYzJKq1LlrZAciIp65gKNK1
       - key: PHONE_NUMBER_ID
-        value: SEU_PHONE_ID_AQUI
+        value: 1375650348961601
       - key: VERIFY_TOKEN
-        value: meu_bot_secreto_123
+        value: 12345
       - key: GEMINI_APIKEY
         value: SUA_GEMINI_KEY_AQUI
 ```

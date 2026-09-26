@@ -5,12 +5,20 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 # ==== CONFIGURAÇÕES (pegue no Meta for Developers) ====
-VERIFY_TOKEN = os.environ.get("VERIFY_TOKEN", "meu_token_secreto")
-ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN", "SEU_ACCESS_TOKEN_AQUI")
-PHONE_NUMBER_ID = os.environ.get("PHONE_NUMBER_ID", "SEU_PHONE_NUMBER_ID_AQUI")
+VERIFY_TOKEN = os.environ.get("VERIFY_TOKEN", "123456")
+ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN", "EAAapx5KgzoMBSmZCp0RlVhaelHFhFz0ZA2QcUZAvlRwmcUyVRNHPRQEuqvWTZCcXwaB7nGDx2w6FKxkPVPQjUyPdOIZCKEnE3326RCvSDYmCkgbBomErdGNqlIafszD8WnTkq1OQ2pklSVd6D56NLxjXwTadazZBMg8uJ692ZCsZCHnQAINxB69QpBWGbKMSQcNyL15z8lFsEQO4UP0fUoVOVlZBbhCqQmdBwtGxJLNBdLxaYNIN9Y8XqyhIjmsDVZAxlG8RQYzJKq1LlrZAciIp65gKNK1")
+PHONE_NUMBER_ID = os.environ.get("PHONE_NUMBER_ID", "1375650348961601")
 
-GRAPH_API_URL = f"https://graph.facebook.com/v21.0/{PHONE_NUMBER_ID}/messages"
-
+GRAPH_API_URL = curl -i -X POST `
+     https://graph.facebook.com/v25.0/1375650348961601/messages `
+     -H 'Authorization: Bearer EAAapx5KgzoMBSmZCp0RlVhaelHFhFz0ZA2QcUZAvlRwmcUyVRNHPRQEuqvWTZCcXwaB7nGDx2w6FKxkPVPQjUyPdOIZCKEnE3326RCvSDYmCkgbBomErdGNqlIafszD8WnTkq1OQ2pklSVd6D56NLxjXwTadazZBMg8uJ692ZCsZCHnQAINxB69QpBWGbKMSQcNyL15z8lFsEQO4UP0fUoVOVlZBbhCqQmdBwtGxJLNBdLxaYNIN9Y8XqyhIjmsDVZAxlG8RQYzJKq1LlrZAciIp65gKNK1' `
+     -H 'Content-Type: application/json' `
+     -d '{ \"messaging_product\": \"whatsapp\",
+     \"to\": \"5511967620340\",
+     \"type\": \"template\",
+     \"template\": { \"name\": \"jaspers_market_order_confirmation_v1\",
+     \"language\": { \"code\": \"en_US\" },
+     \"components\": [{ \"type\": \"body\", \"parameters\": [{ \"type\": \"text\", \"text\": \"John Doe\" }, { \"type\": \"text\", \"text\": \"123456\" }, { \"type\": \"text\", \"text\": \"Sep 26, 2026\" }] }] } }'
 
 @app.route("/webhook", methods=["GET"])
 def verify_webhook():

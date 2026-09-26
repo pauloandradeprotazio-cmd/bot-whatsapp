@@ -10,4 +10,4 @@ services:
       - key: PHONE_NUMBER_ID
         value: 1375650348961601
       - key: VERIFY_TOKEN
-        value: 12345
+        value: 123456

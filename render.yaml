@@ -3,7 +3,7 @@ services:
     name: bot-whatsapp
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn main:app
+    startCommand: gunicorn app:app
     envVars:
       - key: WHATSAPP_TOKEN
         value: EAAapx5KgzoMBSmZCp0RlVhaelHFhFz0ZA2QcUZAvlRwmcUyVRNHPRQEuqvWTZCcXwaB7nGDx2w6FKxkPVPQjUyPdOIZCKEnE3326RCvSDYmCkgbBomErdGNqlIafszD8WnTkq1OQ2pklSVd6D56NLxjXwTadazZBMg8uJ692ZCsZCHnQAINxB69QpBWGbKMSQcNyL15z8lFsEQO4UP0fUoVOVlZBbhCqQmdBwtGxJLNBdLxaYNIN9Y8XqyhIjmsDVZAxlG8RQYzJKq1LlrZAciIp65gKNK1
